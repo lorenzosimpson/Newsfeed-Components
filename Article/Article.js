@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'South Carolina governor: "We want everyone to leave" evacuation zones',
+    date: 'Sep 4th, 2019',
+    firstParagraph: 'Hurricane Dorian, currently a Category 2 with winds of around 105 mph, is expected to make landfall in Beaufort County, South Carolina, near Hilton Head between 6 and 8 a.m. ET tomorrow and work its way up the coast into North Carolina, according to South Carolina Governor Henry McMaster.',
+    secondParagraph: 'Officials are expecting winds along the coast to be around 90 mph, and 6 to 12 inches of rain to cause flooding east of I-95.',
+    thirdParagraph: 'Charleston is already expecting flooding due to tides. Gov. McMaster says water is the real danger, as the storm surge will begin to be felt along the South Carolina coast this afternoon.'
   }
 ];
 
@@ -112,3 +119,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const articles = document.querySelector('.articles');
+
+data.forEach(data => {
+  articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+});
+
+function createArticle(title, date, p1, p2, p3) {
+
+  //create elements 
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleP1 = document.createElement('p');
+  const articleP2 = document.createElement('p');
+  const articleP3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+  //set up structure of elements
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleP1);
+  article.appendChild(articleP2);
+  article.appendChild(articleP3);
+  article.appendChild(expandButton);
+
+  //add class names
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
+
+  //add text content
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleP1.textContent  = p1;
+  articleP2.textContent  = p2;
+  articleP3.textContent = p3;
+  expandButton.textContent = '\u25BD';
+
+  //add event listener
+  expandButton.addEventListener('click', e => {
+    article.classList.toggle('article-open');
+  })
+
+return article;
+}
