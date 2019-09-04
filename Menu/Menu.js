@@ -34,10 +34,12 @@ let menuItems = [
 
   
 */
-
+//add menu component to the dom
 const header = document.querySelector('.header');
 header.appendChild(createMenu(menuItems))
 
+
+//begin function
 function createMenu(arr) {
   //create elements
   const menu = document.createElement('div');
@@ -51,19 +53,18 @@ function createMenu(arr) {
   //add class names
   menu.classList.add('menu');
 
-  //add content
+  //create a list item for each array item and append it to the ul
   arr.forEach(item => {
-    list.appendChild(document.createElement('li'));
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+    list.appendChild(listItem)
   })
 
+  //add click event to open up the menu
   const menuButton = document.querySelector('.menu-button')
   menuButton.addEventListener('click', e=> {
     menu.classList.toggle('menu--open');
   })
 
-
-
-
 return menu;
-
-};
+};//end function
