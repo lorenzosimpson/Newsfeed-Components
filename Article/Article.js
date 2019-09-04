@@ -85,6 +85,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'South Carolina governor: "We want everyone to leave" evacuation zones',
+    date: 'Sep 4th, 2019',
+    firstParagraph: 'Hurricane Dorian, currently a Category 2 with winds of around 105 mph, is expected to make landfall in Beaufort County, South Carolina, near Hilton Head between 6 and 8 a.m. ET tomorrow and work its way up the coast into North Carolina, according to South Carolina Governor Henry McMaster.',
+    secondParagraph: 'Officials are expecting winds along the coast to be around 90 mph, and 6 to 12 inches of rain to cause flooding east of I-95.',
+    thirdParagraph: 'Charleston is already expecting flooding due to tides. Gov. McMaster says water is the real danger, as the storm surge will begin to be felt along the South Carolina coast this afternoon.'
   }
 ];
 
