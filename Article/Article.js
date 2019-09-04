@@ -130,6 +130,7 @@ function createArticle(title, date, p1, p2, p3) {
   const articleP3 = document.createElement('p');
   const expandButton = document.createElement('span');
 
+  //set up structure of elements
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
   article.appendChild(articleP1);
@@ -137,18 +138,23 @@ function createArticle(title, date, p1, p2, p3) {
   article.appendChild(articleP3);
   article.appendChild(expandButton);
 
+  //add class names
   article.classList.add('article');
   articleDate.classList.add('date');
   expandButton.classList.add('expandButton');
 
+  //add text content
   articleTitle.textContent = title;
   articleDate.textContent = date;
   articleP1.textContent  = p1;
   articleP2.textContent  = p2;
   articleP3.textContent = p3;
+  expandButton.textContent = '\u25BD';
 
-
-
+  //add event listener
+  expandButton.addEventListener('click', e => {
+    article.classList.toggle('article-open');
+  })
 
 return article;
 }
